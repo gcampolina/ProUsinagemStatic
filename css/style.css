@@ -1,0 +1,512 @@
+
+
+body, html {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    
+}
+
+
+
+.clientes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Impede que as imagens quebrem para baixo */
+    gap: 20px; /* Ajusta o espaçamento entre as imagens */
+    width: 100%; /* Garante que a largura da div ocupe toda a tela */
+    overflow: hidden; /* Impede a barra de rolagem */
+}
+
+.clientes-container img {
+    width: 15%; /* Ajusta o tamanho das imagens proporcionalmente */
+    padding: 10px;
+    object-fit: contain; /* Garante que a imagem seja escalada sem distorção */
+    transition: transform 0.15s ease-in-out;
+}
+
+.clientes-container img:hover {
+    
+    transform: scale(1.3);
+}
+
+/* RESPONSIVIDADE */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.bar {
+    background-color: #333;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+
+
+@media (max-width: 768px) {
+    
+
+    .navbar {
+        display: none; /* Oculta o menu inicialmente */
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Ajuste conforme necessário */
+        left: 0;
+        padding: 20px 0;
+    }
+
+
+    
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+
+    
+    .logo-container  {
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+    }
+    
+    .widget-container {
+    
+        justify-content: right;
+    }
+    
+
+   
+
+    .carousel-control {
+        font-size: 18px;
+    }
+
+    .widget-container  {
+        z-index: 9991;
+        font-size: 14px;
+    }
+    .orcamento-form {
+        width: 90%;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+.nav-item {
+    margin-right: 50px;
+}
+
+
+/* ESTILO PARA BARRA DE ROLAGEM */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* BOTÃO FIXO DO WHATSAPP */
+.wpp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.wpp-button img {
+    width: 70px;
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+}
+
+.wpp-button img:hover {
+    transform: scale(1.3);
+}
+
+
+.video-container {
+    position: relative; /* Mantém o vídeo dentro dessa div */
+    width: 100%;
+    height: 600px; /* Aumentei um pouco para dar mais destaque */
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo preencher o espaço sem distorcer */
+}
+
+
+
+
+.content {
+    flex: 1;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+
+/* NAVBAR */
+.navbar-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os itens */
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px); /* Adiciona um efeito de desfoque */
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: fixed; /* Fixa a navbar no topo */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 20px; /* Adiciona um espaçamento interno */
+}
+
+.logo-container {
+    flex-shrink: 0; /* Evita que a logo diminua */
+}
+
+.logo img {
+    width: 180px; /* Reduzi um pouco para não ocupar muito espaço */
+}
+
+.navbar {
+    flex-grow: 1; /* Faz a navbar ocupar o espaço entre a logo e o botão */
+    display: flex;
+    justify-content: center; /* Mantém os itens centralizados */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 50px; /* Aumenta o espaçamento entre os links */
+}
+
+.navbar a {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: inline-block; /* Evita que os links mudem de tamanho */
+    padding: 10px 15px; /* Define um padding fixo */
+    border-radius: 5px; /* Mantém o arredondamento */
+    transition: background-color 0.3s, color 0.1s; /* Suaviza a transição */
+}
+
+.navbar a:hover {
+    background-color: #ff6f61;
+    color: #fff;
+    
+}
+
+.imgpro {
+    border-radius: 50%;
+}
+
+.btnOrcamento {
+    background-color: #ff6f61; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.6); /* Efeito glow */
+    animation: blink 1.5s infinite alternate, glow 1.5s ease-in-out infinite alternate, scaleUpDown 2s infinite;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btnOrcamento:hover {
+    background-color: #ff9288;
+    transition: background-color 0.3s, color 0.1s;
+    transform: scale(1.1);
+}
+
+
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Cresce 20% */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho original */
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 111, 97, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 111, 97, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 111, 97, 0.6);
+    }
+}
+
+
+
+
+/* CAROUSEL */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* SEÇÕES */
+.section {
+    padding: 120px 20px;
+}
+
+
+/* Estilo para o conteúdo da seção */
+.content-header {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique sobre a sobreposição */
+    color: #fff;
+    
+}
+
+.content-header h3 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.content-header p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.card {
+    margin-top: -100px;
+    border-radius: 15px;
+    background-color: #333;
+    padding: 60px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    position: relative;
+}
+
+/* Sobreposição de cor sobre a imagem de fundo para melhorar contraste do texto */
+#section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Cor de fundo semi-transparente */
+}
+
+#section4 h3{
+    text-align: center;
+}
+
+#section2 {
+    text-align: center;
+}
+
+#section3 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Garante que a altura mínima seja 100% da tela */
+}
+
+/* RODAPÉ */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: auto;
+}
+
+.link-developer {
+    color: white;
+    
+}
+
+.link-developer2 {
+    color: black;
+}
+
+.link-developer:hover, .link-developer2:hover {
+    color: #ff6f61;
+}
+
+.logo-desc img {
+    width: 300px;
+}
+
+
+
+/*  ANIMAÇÃO FADE-IN AO EXIBIR ALGUNS ELEMENTOS DA PÁGINA AO CARREGÁ-LA */
+.fade-in {
+    opacity: 0;  
+    animation: fadeInAnimation ease 2s; 
+    animation-fill-mode: forwards; 
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.orcamento-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .orcamento-form label {
+    font-weight: bold;
+  }
+  
+  .orcamento-form input,
+  .orcamento-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+
+ .orcamento-form button {
+    border: none;
+    cursor: pointer;
+ }
+
+  .orcamento-form button {
+    color: white;
+    border-radius: 50px;
+    background-color: #3a62e4;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .orcamento-form button:hover {
+    background-color: #577ee7;
+  }
+  
