@@ -307,52 +307,50 @@ body, html {
 
 
 
+
+
+
 /* CAROUSEL */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    margin: 20px auto;
-    overflow: hidden;
+
+
+.swiper {
+  width: 100%;
+  max-width: 100vh;
+  height: 500px; /* Altura fixa */
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-    height: 100%;
+.swiper-slide {
+  width: 100%;
+  height: 100%;
 }
 
-.carousel-item {
-    min-width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Corta e preenche */
+  object-position: center;
+  display: block;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (max-width: 768px) {
+  .swiper {
+    height: 300px;
+  }
 }
 
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none;
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #fff;
+  
 }
 
-.carousel-control.prev {
-    left: 10px;
-}
 
-.carousel-control.next {
-    right: 10px;
-}
+
+
 
 /* SEÇÕES */
 .section {
